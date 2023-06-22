@@ -23,12 +23,12 @@ var ball = {
 
 function setup(){
   var canvas =  createCanvas(700,600);
-  var canvas.parent('canvas');
-  var video = createCapture(VIDEO);
-  var video.size(800, 400);
-  var video.parent('game_console');
-  var poseNet = ml5.poseNet(video, modelLoaded);
-  var poseNet.on('pose', gotPoses);
+  canvas.parent('canvas');
+  video = createCapture(VIDEO);
+  video.size(800, 400);
+  video.parent('game_console');
+  poseNet = ml5.poseNet(video, modelLoaded);
+  poseNet.on('pose', gotPoses);
 }
 
 function modelLoaded(){
@@ -37,8 +37,8 @@ function modelLoaded(){
 
 function gotPoses(results){
   if(results.length > 0){
-    var rightwristX = results[0].pose.rightWrist.x;
-    var rightwristY = results[0].pose.rightWrist.y;
+    rightwristX = results[0].pose.rightWrist.x;
+    rightwristY = results[0].pose.rightWrist.y;
     console.log(results);
   }
 }
